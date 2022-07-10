@@ -1,10 +1,25 @@
+INSERT INTO products VALUES (
+    'silin',
+    'silin',
+    'https://jikkosoft.com/wp-content/uploads/2021/08/LOGO-SILIN-2-300x149.png',
+    'Silin product description'
+);
+INSERT INTO products VALUES (
+    'subsy',
+    'subsy',
+    'https://jikkosoft.com/wp-content/uploads/2021/08/LOGO-SUBSY-1-300x105.png',
+    'Subsy product description'
+);
+
 INSERT INTO processes VALUES (
+    '1',
     '1',
     'validación y transformación',
     'Proceso de Validación y transformación de los archivos referentes al impuesto TSCSS'
 );
 INSERT INTO processes VALUES (
     '2',
+    '1',
     'organizacion documental',
     'Proceso en desarrollo'
 );
