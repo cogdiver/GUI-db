@@ -2,7 +2,7 @@
 --| Author:       valentina.arenas                                      |
 --| Description:                                                        |
 --|                                                                     |
---| Create date:  08/07/2022                                            |
+--| Create date:  09/07/2022                                            |
 --| Jira Task:                                                          |
 --| ====================================================================|
 --| Change History                                                      |
@@ -11,18 +11,18 @@
 --| ------------------------------------------------------------------- |
 --|                |            |                  |                    |
 --=======================================================================
-CREATE TABLE IF NOT EXISTS access (
+CREATE TABLE IF NOT EXISTS process_report (
     id varchar PRIMARY KEY,
-    user_id varchar,
-    permission_id varchar,
+    process_id varchar,
+    report_id varchar,
 
-    CONSTRAINT fk_user FOREIGN KEY (user_id)
-    REFERENCES passwords(id) ON DELETE CASCADE,
+    CONSTRAINT fk_process FOREIGN KEY (process_id)
+    REFERENCES processes(id) ON DELETE CASCADE,
 
-    CONSTRAINT fk_permission FOREIGN KEY (permission_id)
-    REFERENCES permissions(id) ON DELETE CASCADE
+    CONSTRAINT fk_report FOREIGN KEY (report_id)
+    REFERENCES reports(id) ON DELETE CASCADE
 );
-COMMENT ON TABLE access IS '';
-COMMENT ON COLUMN access.id IS '';
-COMMENT ON COLUMN access.user_id IS '';
-COMMENT ON COLUMN access.permission_id IS '';
+COMMENT ON TABLE process_report IS '';
+COMMENT ON COLUMN process_report.id IS '';
+COMMENT ON COLUMN process_report.process_id IS '';
+COMMENT ON COLUMN process_report.report_id IS '';

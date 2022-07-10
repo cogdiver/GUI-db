@@ -15,10 +15,8 @@ CREATE TABLE IF NOT EXISTS processes (
     id varchar PRIMARY KEY,
     name varchar,
     description text,
-    report_ids varchar[]
 );
 COMMENT ON TABLE processes IS '';
 COMMENT ON COLUMN processes.id IS '';
 COMMENT ON COLUMN processes.name IS '';
 COMMENT ON COLUMN processes.description IS '';
-COMMENT ON COLUMN processes.report_ids IS '';

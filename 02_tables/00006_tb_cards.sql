@@ -13,10 +13,12 @@
 --=======================================================================
 CREATE TABLE IF NOT EXISTS cards (
     id varchar PRIMARY KEY,
+    process_id varchar,
     name varchar,
     state state
 );
 COMMENT ON TABLE cards IS '';
 COMMENT ON COLUMN cards.id IS '';
+COMMENT ON COLUMN cards.process_id IS '';
 COMMENT ON COLUMN cards.name IS '';
 COMMENT ON COLUMN cards.state IS '';

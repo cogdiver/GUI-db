@@ -9,6 +9,10 @@
 ---------------------------------------
 -- remove foreign keys from all tables
 ---------------------------------------
+ALTER TABLE process_report DROP CONSTRAINT fk_report;
+ALTER TABLE process_report DROP CONSTRAINT fk_process;
+ALTER TABLE permission_action DROP CONSTRAINT fk_action;
+ALTER TABLE permission_action DROP CONSTRAINT fk_permission;
 ALTER TABLE activity DROP CONSTRAINT fk_card;
 ALTER TABLE activity DROP CONSTRAINT fk_log;
 ALTER TABLE logs DROP CONSTRAINT fk_user;
@@ -26,6 +30,10 @@ ALTER TABLE permissions DROP CONSTRAINT fk_process;
 ----------------------------
 --- drop tables
 ----------------------------
+DROP TABLE IF EXISTS process_report;
+DROP TABLE IF EXISTS permission_action;
+DROP TABLE IF EXISTS reports;
+DROP TABLE IF EXISTS actions;
 DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS logs;
 DROP TABLE IF EXISTS details;
@@ -40,6 +48,19 @@ DROP TABLE IF EXISTS processes;
 ----------------------------
 --- truncate tables
 ----------------------------
+TRUNCATE process_report;
+TRUNCATE permission_action;
+TRUNCATE reports CASCADE;
+TRUNCATE actions CASCADE;
+TRUNCATE activity;
+TRUNCATE logs CASCADE;
+TRUNCATE details;
+TRUNCATE cards CASCADE;
+TRUNCATE access;
+TRUNCATE passwords CASCADE;
+TRUNCATE users CASCADE;
+TRUNCATE permissions CASCADE;
+TRUNCATE processes CASCADE;
 
 ----------------------------
 --- drop index

@@ -16,7 +16,6 @@ CREATE TABLE IF NOT EXISTS permissions (
     process_id varchar,
     allow_comments bool,
     states state[],
-    action_ids varchar[],
 
     CONSTRAINT fk_process FOREIGN KEY (process_id)
     REFERENCES processes(id) ON DELETE CASCADE
@@ -26,4 +25,3 @@ COMMENT ON COLUMN permissions.id IS '';
 COMMENT ON COLUMN permissions.process_id IS '';
 COMMENT ON COLUMN permissions.allow_comments IS '';
 COMMENT ON COLUMN permissions.states IS '';
-COMMENT ON COLUMN permissions.action_ids IS '';

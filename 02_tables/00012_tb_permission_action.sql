@@ -2,7 +2,7 @@
 --| Author:       valentina.arenas                                      |
 --| Description:                                                        |
 --|                                                                     |
---| Create date:  08/07/2022                                            |
+--| Create date:  09/07/2022                                            |
 --| Jira Task:                                                          |
 --| ====================================================================|
 --| Change History                                                      |
@@ -11,18 +11,18 @@
 --| ------------------------------------------------------------------- |
 --|                |            |                  |                    |
 --=======================================================================
-CREATE TABLE IF NOT EXISTS access (
+CREATE TABLE IF NOT EXISTS permission_action (
     id varchar PRIMARY KEY,
-    user_id varchar,
     permission_id varchar,
-
-    CONSTRAINT fk_user FOREIGN KEY (user_id)
-    REFERENCES passwords(id) ON DELETE CASCADE,
+    action_id varchar,
 
     CONSTRAINT fk_permission FOREIGN KEY (permission_id)
-    REFERENCES permissions(id) ON DELETE CASCADE
+    REFERENCES permissions(id) ON DELETE CASCADE,
+
+    CONSTRAINT fk_action FOREIGN KEY (action_id)
+    REFERENCES actions(id) ON DELETE CASCADE
 );
-COMMENT ON TABLE access IS '';
-COMMENT ON COLUMN access.id IS '';
-COMMENT ON COLUMN access.user_id IS '';
-COMMENT ON COLUMN access.permission_id IS '';
+COMMENT ON TABLE permission_action IS '';
+COMMENT ON COLUMN permission_action.id IS '';
+COMMENT ON COLUMN permission_action.permission_id IS '';
+COMMENT ON COLUMN permission_action.action_id IS '';

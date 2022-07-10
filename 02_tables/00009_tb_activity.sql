@@ -12,6 +12,7 @@
 --|                |            |                  |                    |
 --=======================================================================
 CREATE TABLE IF NOT EXISTS activity (
+    id varchar PRIMARY KEY,
     card_id varchar,
     log_id varchar,
 
@@ -22,5 +23,6 @@ CREATE TABLE IF NOT EXISTS activity (
     REFERENCES logs(id) ON DELETE CASCADE
 );
 COMMENT ON TABLE activity IS '';
+COMMENT ON COLUMN activity.id IS '';
 COMMENT ON COLUMN activity.card_id IS '';
 COMMENT ON COLUMN activity.log_id IS '';

@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS logs (
     id varchar PRIMARY KEY,
     allow_change bool,
     user_id text,
-    date date,
+    time timestamp,
     content text,
 
     CONSTRAINT fk_user FOREIGN KEY (user_id)
@@ -25,5 +25,5 @@ COMMENT ON TABLE logs IS '';
 COMMENT ON COLUMN logs.id IS '';
 COMMENT ON COLUMN logs.allow_change IS '';
 COMMENT ON COLUMN logs.user_id IS '';
-COMMENT ON COLUMN logs.date IS '';
+COMMENT ON COLUMN logs.time IS '';
 COMMENT ON COLUMN logs.content IS '';
